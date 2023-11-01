@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<mat-toolbar>
+  <a><img src="./assets/metabibasi_logo.jpg"></a>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
