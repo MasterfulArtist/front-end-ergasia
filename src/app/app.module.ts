@@ -16,13 +16,17 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {RouterOutlet} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { RegisterComponent } from './register/register.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
     AppComponent,
      HomeComponent,
      LoginComponent,
-     NavbarComponent
+     NavbarComponent,
+     RegisterComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +41,9 @@ import { AppRoutingModule } from './app-routing.module';
     MatInputModule,
     MatSelectModule,
     RouterOutlet,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule
 
   ],
   providers: [],
