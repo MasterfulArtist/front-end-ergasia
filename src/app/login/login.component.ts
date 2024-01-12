@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../services/auth.service";
 import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
+import {MatDialog} from "@angular/material/dialog";
+import {RegisterComponent} from "../register/register.component";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,8 @@ export class LoginComponent implements OnInit{
   username:string=''
   password:string=''
 
-  constructor(private authservice:AuthService){
+  constructor(private authservice:AuthService,
+              private matDialogue:MatDialog){
 
   }
 
@@ -42,41 +45,20 @@ export class LoginComponent implements OnInit{
 
   }
 
-  logout(){
-
-    this.authservice.signin(this.username,this.password).subscribe(
-
-      response => {
-
-      },
-      error=> {
-
-      }
-
-    );
-
-  }
-
-  getallaccounts(){
-
-    this.authservice.getallaccounts().subscribe(
-      response => {
-
-        console.log(response);
-
-
-      },
-      error=> {
-
-        console.log(error);
-
+  register(){
+    this.username='';
+    this.password='';
+    const dialogRef=this.matDialogue.open(
+      RegisterComponent,
+    {
+      width:'400px',
+      height:'500px'
       }
 
     );
 
 
   }
-
 
 
 }

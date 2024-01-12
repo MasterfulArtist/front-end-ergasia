@@ -1,0 +1,62 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Product List</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card>
+
+      <mat-card-content>
+
+        <table mat-table [dataSource]="products">
+
+          <ng-container matColumnDef="Id">
+
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td *matCellDef="let product" mat-cell>{{product.id}}</td>
+
+          </ng-container>
+
+          <ng-container matColumnDef="Name">
+
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td *matCellDef="let product" mat-cell>{{product.name}}</td>
+
+          </ng-container>
+
+          <ng-container matColumnDef="Price">
+
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td *matCellDef="let product" mat-cell>{{product.price}}</td>
+
+          </ng-container>
+
+<!--          <ng-container matColumnDef="Farmers">-->
+
+<!--            <th mat-header-cell *matHeaderCellDef>Farmers</th>-->
+<!--            <td *matCellDef="let product" mat-cell>{{product.farmers[0].firstName}}</td>-->
+
+<!--          </ng-container>-->
+
+<!--          <ng-container matColumnDef="Regions">-->
+
+<!--            <th mat-header-cell *matHeaderCellDef>Regions</th>-->
+<!--            <td *matCellDef="let product" mat-cell>{{product.regions}}</td>-->
+
+<!--          </ng-container>-->
+
+
+          <tr *matHeaderRowDef="displayedcolumns" mat-header-row></tr>
+          <tr *matRowDef="let row;columns:displayedcolumns" mat-row></tr>
+
+
+        </table>
+
+      </mat-card-content>
+
+
+    </mat-card>
+  </mat-card-content>
+  <mat-card-actions>
+<!--    <button mat-button (click)="signup()">Sign Up</button>-->
+  </mat-card-actions>
+</mat-card>

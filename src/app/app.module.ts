@@ -19,6 +19,10 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './register/register.component';
 import {MatCardModule} from "@angular/material/card";
+import { ProductListComponent } from './product-list/product-list/product-list.component';
+import { ProductCreateComponent } from './product-list/product-create/product-create.component';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import {MatCardModule} from "@angular/material/card";
      HomeComponent,
      LoginComponent,
      NavbarComponent,
-     RegisterComponent
+     RegisterComponent,
+     ProductListComponent,
+     ProductCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -43,7 +49,9 @@ import {MatCardModule} from "@angular/material/card";
     RouterOutlet,
     AppRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatTableModule
 
   ],
   providers: [],

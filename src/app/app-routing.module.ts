@@ -3,13 +3,18 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {ProductCreateComponent} from "./product-list/product-create/product-create.component";
+import {ProductListComponent} from "./product-list/product-list/product-list.component";
 
 
 const routes: Routes = [
 
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'product-list', component: ProductListComponent}
+
+
 
 
 ];

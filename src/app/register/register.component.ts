@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterComponent implements OnInit{
   email: string='';
   password: string='';
 
-  constructor(private authservice:AuthService){
+  constructor(private authservice:AuthService,
+              private dialogref:MatDialogRef<RegisterComponent>){
 
   }
 
@@ -28,6 +30,7 @@ export class RegisterComponent implements OnInit{
       response => {
 
         console.log(response);
+        this.dialogref.close();
 
       },
       error=> {
