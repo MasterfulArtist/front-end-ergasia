@@ -14,4 +14,17 @@ export class ProductService {
 
   }
 
+  createProducts(name:string , price:number){
+
+    return this.httpclient.post<any>("http://localhost:9090/api/product/newProduct",
+
+        {
+          name:name,
+          price:price
+        }
+
+      )
+
+  }
+
 }

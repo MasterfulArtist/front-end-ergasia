@@ -10,7 +10,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class ProductListComponent implements OnInit {
 
   products=new MatTableDataSource<any>();
-  displayedcolumns:string[]= ['Id','Name','Price','Farmers','Regions'];
+  displayedcolumns:string[]= ['Id','Name','Price'];
 
   constructor(private productService: ProductService) {
 

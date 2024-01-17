@@ -23,6 +23,7 @@ import { ProductListComponent } from './product-list/product-list/product-list.c
 import { ProductCreateComponent } from './product-list/product-create/product-create.component';
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatTableModule} from "@angular/material/table";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {MatTableModule} from "@angular/material/table";
     HttpClientModule,
     MatCardModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
 
   ],
   providers: [],
