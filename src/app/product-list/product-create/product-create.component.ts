@@ -3,6 +3,7 @@ import {AuthService} from "../../services/auth.service";
 import {MatDialogRef} from "@angular/material/dialog";
 import {ProductService} from "../../services/product.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-create',
@@ -15,7 +16,8 @@ export class ProductCreateComponent {
   productprice: number=0;
 
   constructor(private productService:ProductService,
-              private matSnackBar:MatSnackBar){
+              private matSnackBar:MatSnackBar,
+              private router:Router){
 
   }
 
@@ -28,6 +30,8 @@ export class ProductCreateComponent {
 
         this.productname='';
         this.productprice=0;
+
+        this.router.navigateByUrl('/product-list');
 
       },
       error=> {
