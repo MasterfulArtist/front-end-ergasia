@@ -27,4 +27,14 @@ export class ProductService {
 
   }
 
+  deleteProduct(Id:number){
+
+    return this.httpclient.delete<any>("http://localhost:9090/api/product/deleteProductById/"+Id
+
+    )
+
+  }
+
 }
+
+

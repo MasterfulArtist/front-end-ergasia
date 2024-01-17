@@ -10,7 +10,7 @@ import {MatTableDataSource} from "@angular/material/table";
 export class ProductListComponent implements OnInit {
 
   products=new MatTableDataSource<any>();
-  displayedcolumns:string[]= ['Id','Name','Price'];
+  displayedcolumns:string[]= ['Id','Name','Price','DeleteButton'];
 
   constructor(private productService: ProductService) {
 
@@ -36,6 +36,36 @@ export class ProductListComponent implements OnInit {
   }
 
 
+  deleteProduct(id:number) {
 
+    this.productService.deleteProduct(id).subscribe(
+
+      response => {
+
+        console.log(response);
+        this.productService.getProducts().subscribe(
+
+          response => {
+
+            console.log(response);
+            this.products = new MatTableDataSource<any>(response);
+
+          },
+          error=> {
+
+            console.log(error);
+
+          }
+
+        );
+
+      },
+      error=> {
+
+        console.log(error);
+
+      });
+
+  }
 
 }
