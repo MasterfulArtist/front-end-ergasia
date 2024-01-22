@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {AccountService} from "../services/account.service";
 
 @Component({
   selector: 'app-register',
@@ -9,28 +10,37 @@ import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 })
 export class RegisterComponent implements OnInit{
 
+  firstName: string='';
+  lastName: string='';
   username: string='';
   email: string='';
   password: string='';
+  phone: string='';
 
   constructor(private authservice:AuthService,
+              private accountService:AccountService,
               private dialogref:MatDialogRef<RegisterComponent>){
 
   }
 
-  ngOnInit(): void {
-
-
-
-  }
+  ngOnInit(): void {}
 
   signup(){
-
     this.authservice.signup(this.username,this.email, this.password).subscribe(
       response => {
 
         console.log(response);
-        this.dialogref.close();
+
+        this.accountService.createFarmerAccount(this.firstName,this.lastName,
+          this.username,this.email,this.password,this.phone).subscribe(
+          resp => {
+
+            this.dialogref.close();
+
+          },
+          error =>{
+
+          });
 
       },
       error=> {
@@ -43,6 +53,7 @@ export class RegisterComponent implements OnInit{
 
 
   }
+
 
 
 }

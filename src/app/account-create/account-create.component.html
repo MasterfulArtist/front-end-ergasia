@@ -1,14 +1,8 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Registration</mat-card-title>
+    <mat-card-title>New Account</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput [(ngModel)]="email">
-    </mat-form-field>
-
 
     <mat-form-field>
       <mat-label>First Name</mat-label>
@@ -21,8 +15,13 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Username</mat-label>
-      <input matInput [(ngModel)]="username">
+      <mat-label>User Name</mat-label>
+      <input matInput [(ngModel)]="userName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email">
     </mat-form-field>
 
     <mat-form-field>
@@ -35,9 +34,9 @@
       <input matInput [(ngModel)]="phone">
     </mat-form-field>
 
-
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="signup()">Sign Up</button>
+    <button mat-button [disabled]="isDisabled()"
+            (click)="addAccount()">Add the account</button>
   </mat-card-actions>
 </mat-card>

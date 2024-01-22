@@ -5,17 +5,22 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProductCreateComponent} from "./product-list/product-create/product-create.component";
 import {ProductListComponent} from "./product-list/product-list/product-list.component";
+import {HomeComponent} from "./home/home.component";
+import {AccountListComponent} from "./account-list/account-list.component";
+import {AccountCreateComponent} from "./account-create/account-create.component";
 
 
 const routes: Routes = [
 
+  {path: 'home', component: HomeComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', redirectTo: 'login', pathMatch: 'full'},
   {path: 'product-list', component: ProductListComponent},
+  {path: 'account-list', component: AccountListComponent},
+  {path: 'account-create', component: AccountCreateComponent},
+
   {path: 'product-list/new-product', component: ProductCreateComponent}
-
-
 
 ];
 @NgModule({

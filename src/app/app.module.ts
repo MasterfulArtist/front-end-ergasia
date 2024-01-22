@@ -24,6 +24,8 @@ import { ProductCreateComponent } from './product-list/product-create/product-cr
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatTableModule} from "@angular/material/table";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import { AccountListComponent } from './account-list/account-list.component';
+import { AccountCreateComponent } from './account-create/account-create.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
      NavbarComponent,
      RegisterComponent,
      ProductListComponent,
-     ProductCreateComponent
+     ProductCreateComponent,
+     AccountListComponent,
+     AccountCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit{
       RegisterComponent,
     {
       width:'400px',
-      height:'500px'
+      height:'600px'
       }
 
     );
