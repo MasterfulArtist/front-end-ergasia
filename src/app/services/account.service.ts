@@ -8,9 +8,15 @@ export class AccountService {
 
   constructor(private httpclient:HttpClient) { }
 
-  getAccounts(){
+  getFarmerAccounts(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/product")
+    return this.httpclient.get<any>("http://localhost:9090/api/farmer")
+
+  }
+
+  getSupervisorAccounts(){
+
+    return this.httpclient.get<any>("http://localhost:9090/api/supervisor")
 
   }
 

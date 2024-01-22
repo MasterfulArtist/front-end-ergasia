@@ -1,1 +1,63 @@
-<p>account-list works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Account List</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card>
+
+      <mat-card-content>
+
+        <table mat-table [dataSource]="accounts">
+
+          <ng-container matColumnDef="userName">
+
+            <th mat-header-cell *matHeaderCellDef>User Name</th>
+            <td *matCellDef="let account" mat-cell>{{account.username}}</td>
+
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td *matCellDef="let account" mat-cell>{{account.email}}</td>
+
+          </ng-container>
+
+          <ng-container matColumnDef="role">
+
+            <th mat-header-cell *matHeaderCellDef>role</th>
+            <td *matCellDef="let account" mat-cell>{{account.role}}</td>
+
+          </ng-container>
+
+          <ng-container matColumnDef="DeleteButton">
+
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td *matCellDef="let account" mat-cell>
+
+              <button mat-button (click)="deleteAccount(account.id)">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+
+            </td>
+
+          </ng-container>
+
+
+          <tr *matHeaderRowDef="displayedcolumns" mat-header-row></tr>
+          <tr *matRowDef="let row;columns:displayedcolumns" mat-row></tr>
+
+
+        </table>
+
+      </mat-card-content>
+
+      <button mat-button color="primary" (click)="gotoCreate()">New Supervisor</button>
+
+
+    </mat-card>
+  </mat-card-content>
+  <mat-card-actions>
+    <!--    <button mat-button (click)="signup()">Sign Up</button>-->
+  </mat-card-actions>
+</mat-card>

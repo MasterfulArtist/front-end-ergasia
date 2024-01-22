@@ -25,12 +25,6 @@ export class AuthService {
 
   }
 
-  getallaccounts(){
-
-    return this.httpclient.get<any>("http://localhost:9000/api/account/accounts_list",{
-    })
-
-  }
 
   signup(username:string , email:string, password:string){
 
