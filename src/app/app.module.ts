@@ -26,6 +26,9 @@ import {MatTableModule} from "@angular/material/table";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountCreateComponent } from './account-create/account-create.component';
+import { RegionListComponent } from './region-management/region-list/region-list.component';
+import { RequestForApprovalListComponent } from './request-for-approval-list/request-for-approval-list.component';
+import { RequestForApprovalCreateComponent } from './request-for-approval-create/request-for-approval-create.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { AccountCreateComponent } from './account-create/account-create.componen
      ProductListComponent,
      ProductCreateComponent,
      AccountListComponent,
-     AccountCreateComponent
+     AccountCreateComponent,
+     RegionListComponent,
+     RequestForApprovalListComponent,
+     RequestForApprovalCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,

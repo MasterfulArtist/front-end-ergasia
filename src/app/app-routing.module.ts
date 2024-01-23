@@ -8,6 +8,7 @@ import {ProductListComponent} from "./product-list/product-list/product-list.com
 import {HomeComponent} from "./home/home.component";
 import {AccountListComponent} from "./account-list/account-list.component";
 import {AccountCreateComponent} from "./account-create/account-create.component";
+import {RequestForApprovalCreateComponent} from "./request-for-approval-create/request-for-approval-create.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path: 'product-list', component: ProductListComponent},
   {path: 'account-list', component: AccountListComponent},
   {path: 'account-create', component: AccountCreateComponent},
-
+  {path: 'request-create', component: RequestForApprovalCreateComponent},
   {path: 'product-list/new-product', component: ProductCreateComponent}
 
 ];

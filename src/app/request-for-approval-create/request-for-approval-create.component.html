@@ -1,0 +1,55 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>New Request for approval</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-form-field>
+      <mat-label>Approval Name</mat-label>
+      <input matInput [(ngModel)]="approvalName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Details</mat-label>
+      <input matInput [(ngModel)]="approvalDetails">
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <mat-label>Farmers</mat-label>
+      <mat-select [(ngModel)]="selectedFarmers" [multiple]="true">
+        <mat-option *ngFor="let farmer of farmers" [value]="farmer">
+          {{farmer.username}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <mat-label>Products</mat-label>
+      <mat-select [(ngModel)]="selectedProducts" [multiple]="true">
+        <mat-option *ngFor="let product of products" [value]="product">
+          {{product.name}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+      <mat-label>Region</mat-label>
+      <mat-select [(ngModel)]="selectedRegion">
+        <mat-option *ngFor="let region of regions" [value]="region">
+          {{region.name}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button [disabled]="isDisabled()"
+            (click)="addRequestForApproval()">Add the Request</button>
+  </mat-card-actions>
+</mat-card>
