@@ -4,6 +4,8 @@ import {AuthService} from "../services/auth.service";
 import {getXHRResponse} from "rxjs/internal/ajax/getXHRResponse";
 import {MatDialog} from "@angular/material/dialog";
 import {RegisterComponent} from "../register/register.component";
+import {StorageService} from "../services/storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -14,9 +16,12 @@ export class LoginComponent implements OnInit{
 
   username:string=''
   password:string=''
+  isLoggedIn:boolean=false;
 
   constructor(private authservice:AuthService,
-              private matDialogue:MatDialog){
+              private storageService:StorageService,
+              private matDialogue:MatDialog,
+              private router:Router){
 
   }
 
@@ -30,8 +35,11 @@ export class LoginComponent implements OnInit{
     this.authservice.signin(this.username,this.password).subscribe(
       response => {
 
-        console.log(response.email);
-
+        this.storageService.setSession(response.accessToken);
+        delete response.accessToken;
+        this.storageService.saveUser(response);
+        this.isLoggedIn=true;
+        this.router.navigate(["/home"]);
 
       },
       error=> {
@@ -57,6 +65,15 @@ export class LoginComponent implements OnInit{
 
     );
 
+  }
+
+  logout(){
+
+    if(this.storageService.isLoggedIn()) {
+      this.storageService.clean();
+      this.isLoggedIn=false;
+      this.router.navigate(["/"]);
+    }
 
   }
 

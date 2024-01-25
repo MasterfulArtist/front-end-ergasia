@@ -10,13 +10,13 @@ export class ProductService {
 
   getProducts(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/product")
+    return this.httpclient.get<any>("http://localhost:9090/api/products")
 
   }
 
   createProducts(name:string , price:number){
 
-    return this.httpclient.post<any>("http://localhost:9090/api/product/newProduct",
+    return this.httpclient.post<any>("http://localhost:9090/api/products/newProduct",
 
         {
           name:name,
@@ -29,7 +29,7 @@ export class ProductService {
 
   deleteProduct(Id:number){
 
-    return this.httpclient.delete<any>("http://localhost:9090/api/product/deleteProductById/"+Id
+    return this.httpclient.delete<any>("http://localhost:9090/api/products/deleteProductById/"+Id
 
     )
 

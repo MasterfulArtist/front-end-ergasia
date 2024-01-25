@@ -10,7 +10,7 @@ export class AccountService {
 
   getFarmerAccounts(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/farmer")
+    return this.httpclient.get<any>("http://localhost:9090/api/farmers")
 
   }
 
@@ -23,7 +23,7 @@ export class AccountService {
   createFarmerAccount(firstName:string , lastName:string , userName:string,
                           email:string, password:string , phone:string ){
 
-    return this.httpclient.post<any>("http://localhost:9090/api/farmer/newFarmer",
+    return this.httpclient.post<any>("http://localhost:9090/api/farmers/newFarmer",
 
       {
         firstName:firstName,

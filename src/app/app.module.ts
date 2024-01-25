@@ -29,6 +29,7 @@ import { AccountCreateComponent } from './account-create/account-create.componen
 import { RegionListComponent } from './region-management/region-list/region-list.component';
 import { RequestForApprovalListComponent } from './request-for-approval-list/request-for-approval-list.component';
 import { RequestForApprovalCreateComponent } from './request-for-approval-create/request-for-approval-create.component';
+import {httpInterceptorProviders} from "./shared/http.interceptor";
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { RequestForApprovalCreateComponent } from './request-for-approval-create
     MatSnackBarModule
 
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
