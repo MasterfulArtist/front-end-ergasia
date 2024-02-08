@@ -20,7 +20,7 @@ export class StorageService {
 
   public setSession(token: any): void {
     window.sessionStorage.removeItem(TOKEN);
-    window.sessionStorage.setItem(TOKEN, JSON.stringify(token));
+    window.sessionStorage.setItem(TOKEN, JSON.stringify("Bearer "+token));
   }
 
   public getUser(): any {

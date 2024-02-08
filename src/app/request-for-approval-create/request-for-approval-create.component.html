@@ -9,6 +9,11 @@
       <input matInput [(ngModel)]="approvalName">
     </mat-form-field>
 
+    <mat-form-field *ngIf="false">
+      <mat-label>Status</mat-label>
+      <input matInput  [(ngModel)]="status">
+    </mat-form-field>
+
     <mat-form-field>
       <mat-label>Details</mat-label>
       <input matInput [(ngModel)]="approvalDetails">

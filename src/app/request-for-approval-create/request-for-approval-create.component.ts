@@ -21,6 +21,7 @@ export class RequestForApprovalCreateComponent implements OnInit {
   products: any[] = [];
   selectedRegion: any;
   regions: any[]=[];
+  status: number =0;
 
   constructor(private accountService: AccountService,
               private productService: ProductService,
@@ -33,7 +34,7 @@ export class RequestForApprovalCreateComponent implements OnInit {
 
     if(this.approvalName===''|| this.approvalDetails==='' ||
       (this.selectedFarmers.length===0) || (this.selectedProducts.length===0)
-    || (this.selectedRegion===null)){
+      || (this.selectedRegion===null)){
       return true;
     }
     return false;
@@ -43,7 +44,7 @@ export class RequestForApprovalCreateComponent implements OnInit {
   addRequestForApproval() {
 
     this.requestForApprovalService.postApprovalRequests(this.approvalName,
-      this.approvalDetails,this.selectedFarmers,this.selectedProducts,this.selectedRegion).subscribe(
+      this.approvalDetails,this.selectedFarmers,this.selectedProducts,this.selectedRegion, this.status).subscribe(
       response => {
 
         console.log(response);
@@ -60,19 +61,19 @@ export class RequestForApprovalCreateComponent implements OnInit {
   }
   ngOnInit(): void {
 
-      this.accountService.getFarmerAccounts().subscribe(
-        response => {
+    this.accountService.getFarmerAccounts().subscribe(
+      response => {
 
-          console.log(response);
-          this.farmers = (response);
+        console.log(response);
+        this.farmers = (response);
 
-        },
-        error => {
+      },
+      error => {
 
-          console.log(error);
+        console.log(error);
 
-        }
-      );
+      }
+    );
 
     this.productService.getProducts().subscribe(
       response => {

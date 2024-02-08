@@ -16,12 +16,12 @@ export class AccountService {
 
   getSupervisorAccounts(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/supervisor")
+    return this.httpclient.get<any>("http://localhost:9090/api/supervisors")
 
   }
 
   createFarmerAccount(firstName:string , lastName:string , userName:string,
-                          email:string, password:string , phone:string ){
+                      email:string, password:string , phone:string ){
 
     return this.httpclient.post<any>("http://localhost:9090/api/farmers/newFarmer",
 
@@ -40,9 +40,9 @@ export class AccountService {
 
 
   createSupervisorAccount(firstName:string , lastName:string , userName:string,
-                email:string, password:string , phone:string ){
+                          email:string, password:string , phone:string ){
 
-    return this.httpclient.post<any>("http://localhost:9090/api/supervisor/newSupervisor",
+    return this.httpclient.post<any>("http://localhost:9090/api/supervisors/newSupervisor",
 
       {
         firstName:firstName,
@@ -84,14 +84,6 @@ export class AccountService {
         password:password,
         role:['ROLE_SUPERVISOR']
       }
-
-    )
-
-  }
-
-  deleteAccount(Id:number){
-
-    return this.httpclient.delete<any>("http://localhost:9090/api/product/deleteProductById/"+Id
 
     )
 

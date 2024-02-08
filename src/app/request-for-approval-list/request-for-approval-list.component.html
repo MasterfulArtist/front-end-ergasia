@@ -1,77 +1,60 @@
 <!--<mat-card class="example-card">-->
 <!--  <mat-card-header>-->
-<!--    <mat-card-title>Product List</mat-card-title>-->
+<!--    <mat-card-title>New Request for approval</mat-card-title>-->
 <!--  </mat-card-header>-->
 <!--  <mat-card-content>-->
-<!--    <mat-card>-->
 
-<!--      <mat-card-content>-->
+<!--    <mat-form-field>-->
+<!--      <mat-label>Approval Name</mat-label>-->
+<!--      <input matInput [(ngModel)]="approvalName">-->
+<!--    </mat-form-field>-->
 
-<!--        <table mat-table [dataSource]="approvalRequests">-->
+<!--    <mat-form-field *ngIf="false">-->
+<!--      <mat-label>Status</mat-label>-->
+<!--      <input matInput  [(ngModel)]="status">-->
+<!--    </mat-form-field>-->
 
-<!--          <ng-container matColumnDef="Id">-->
+<!--    <mat-form-field>-->
+<!--      <mat-label>Details</mat-label>-->
+<!--      <input matInput [(ngModel)]="approvalDetails">-->
+<!--    </mat-form-field>-->
 
-<!--            <th mat-header-cell *matHeaderCellDef>ID</th>-->
-<!--            <td *matCellDef="let product" mat-cell>{{product.id}}</td>-->
+<!--    <mat-form-field>-->
 
-<!--          </ng-container>-->
+<!--      <mat-label>Farmers</mat-label>-->
+<!--      <mat-select [(ngModel)]="selectedFarmers" [multiple]="true">-->
+<!--        <mat-option *ngFor="let farmer of farmers" [value]="farmer">-->
+<!--          {{farmer.username}}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
 
-<!--          <ng-container matColumnDef="Name">-->
+<!--    </mat-form-field>-->
 
-<!--            <th mat-header-cell *matHeaderCellDef>Name</th>-->
-<!--            <td *matCellDef="let product" mat-cell>{{product.name}}</td>-->
+<!--    <mat-form-field>-->
 
-<!--          </ng-container>-->
+<!--      <mat-label>Products</mat-label>-->
+<!--      <mat-select [(ngModel)]="selectedProducts" [multiple]="true">-->
+<!--        <mat-option *ngFor="let product of products" [value]="product">-->
+<!--          {{product.name}}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
 
-<!--          <ng-container matColumnDef="Price">-->
+<!--    </mat-form-field>-->
 
-<!--            <th mat-header-cell *matHeaderCellDef>Price</th>-->
-<!--            <td *matCellDef="let product" mat-cell>{{product.price}}</td>-->
+<!--    <mat-form-field>-->
 
-<!--          </ng-container>-->
+<!--      <mat-label>Region</mat-label>-->
+<!--      <mat-select [(ngModel)]="selectedRegion">-->
+<!--        <mat-option *ngFor="let region of regions" [value]="region">-->
+<!--          {{region.name}}-->
+<!--        </mat-option>-->
+<!--      </mat-select>-->
 
-<!--          <ng-container matColumnDef="Farmers">-->
+<!--    </mat-form-field>-->
 
-<!--            <th mat-header-cell *matHeaderCellDef>Farmers</th>-->
-<!--            <td *matCellDef="let product" mat-cell>{{product.farmers[0].firstName}}</td>-->
-
-<!--          </ng-container>-->
-
-<!--          <ng-container matColumnDef="Regions">-->
-
-<!--            <th mat-header-cell *matHeaderCellDef>Regions</th>-->
-<!--            <td *matCellDef="let product" mat-cell>{{product.regions}}</td>-->
-
-<!--          </ng-container>-->
-
-<!--          <ng-container matColumnDef="DeleteButton">-->
-
-<!--            <th mat-header-cell *matHeaderCellDef></th>-->
-<!--            <td *matCellDef="let product" mat-cell>-->
-
-<!--              <button mat-button (click)="deleteProduct(product.id)">-->
-<!--                <mat-icon>delete_outline</mat-icon>-->
-<!--              </button>-->
-
-<!--            </td>-->
-
-<!--          </ng-container>-->
-
-
-<!--          <tr *matHeaderRowDef="displayedcolumns" mat-header-row></tr>-->
-<!--          <tr *matRowDef="let row;columns:displayedcolumns" mat-row></tr>-->
-
-
-<!--        </table>-->
-
-<!--      </mat-card-content>-->
-
-<!--      <button mat-button color="primary" routerLink="new-product">New Product</button>-->
-
-
-<!--    </mat-card>-->
 <!--  </mat-card-content>-->
 <!--  <mat-card-actions>-->
-<!--    &lt;!&ndash;    <button mat-button (click)="signup()">Sign Up</button>&ndash;&gt;-->
+<!--    <button mat-button [disabled]="isDisabled()"-->
+<!--            (click)="addRequestForApproval()">Add the Request</button>-->
 <!--  </mat-card-actions>-->
 <!--</mat-card>-->

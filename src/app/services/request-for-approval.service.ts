@@ -10,20 +10,21 @@ export class RequestForApprovalService {
 
   getApprovalRequests(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/requestForApproval");
+    return this.httpclient.get<any>("http://localhost:9090/api/requests");
 
   }
 
-  postApprovalRequests(name:string, details:string, farmers:any[], products:any[],region:number){
+  postApprovalRequests(name:string, details:string, farmers:any[], products:any[],region:number, status:number){
 
-    return this.httpclient.post<any>("http://localhost:9090/api/requestForApproval/newRequestForApproval",
+    return this.httpclient.post<any>("http://localhost:9090/api/requests/newRequest",
       {
 
         name:name,
         details:details,
         farmers:farmers,
         products:products,
-        region:region
+        region:region,
+        status:status
 
       });
 

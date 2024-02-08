@@ -10,7 +10,7 @@ export class RegionService {
 
   getRegions(){
 
-    return this.httpclient.get<any>("http://localhost:9090/api/region");
+    return this.httpclient.get<any>("http://localhost:9090/api/regions");
 
   }
 
