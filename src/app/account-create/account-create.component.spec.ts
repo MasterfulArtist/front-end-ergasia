@@ -10,7 +10,7 @@ describe('AccountCreateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AccountCreateComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AccountCreateComponent);
     component = fixture.componentInstance;

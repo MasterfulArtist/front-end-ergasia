@@ -10,7 +10,7 @@ describe('RequestForApprovalCreateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RequestForApprovalCreateComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RequestForApprovalCreateComponent);
     component = fixture.componentInstance;

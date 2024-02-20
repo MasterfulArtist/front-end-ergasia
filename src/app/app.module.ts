@@ -34,17 +34,17 @@ import {httpInterceptorProviders} from "./shared/http.interceptor";
 @NgModule({
   declarations: [
     AppComponent,
-     HomeComponent,
-     LoginComponent,
-     NavbarComponent,
-     RegisterComponent,
-     ProductListComponent,
-     ProductCreateComponent,
-     AccountListComponent,
-     AccountCreateComponent,
-     RegionListComponent,
-     RequestForApprovalListComponent,
-     RequestForApprovalCreateComponent
+    HomeComponent,
+    LoginComponent,
+    NavbarComponent,
+    RegisterComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    AccountListComponent,
+    AccountCreateComponent,
+    RegionListComponent,
+    RequestForApprovalListComponent,
+    RequestForApprovalCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,

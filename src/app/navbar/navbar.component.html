@@ -1,27 +1,27 @@
 <mat-toolbar *ngIf="isLogIn()">
 
-    <button mat-icon-button routerLink="home">
-      <mat-icon>home</mat-icon>
-    </button>
+  <button mat-icon-button routerLink="home">
+    <mat-icon>home</mat-icon>
+  </button>
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="product-list" *ngIf="isFarmer()">Product List</button>
-      <button mat-menu-item routerLink="product-list/new-product" *ngIf="isFarmer()">Product Create</button>
-      <button mat-menu-item routerLink="account-list" *ngIf="isAdmin()">Account List</button>
-      <button mat-menu-item routerLink="account-create" *ngIf="isAdmin()">New Supervisor</button>
-      <button mat-menu-item routerLink="request-create" *ngIf="isFarmer()">New Request</button>
-    </mat-menu>
-
-
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" (click)="logout()">
-      <mat-icon>exit_to_app</mat-icon>
-    </button>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="product-list" *ngIf="isFarmer()">Product List</button>
+    <button mat-menu-item routerLink="product-list/new-product" *ngIf="isFarmer()">Product Create</button>
+    <button mat-menu-item routerLink="account-list" *ngIf="isAdmin()">Account List</button>
+    <button mat-menu-item routerLink="account-create" *ngIf="isAdmin()">New Supervisor</button>
+    <button mat-menu-item routerLink="request-create" *ngIf="isFarmer()">New Request</button>
+  </mat-menu>
 
 
-    <button mat-icon-button class="example-icon">
-      <mat-icon>share</mat-icon>
-    </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+
+
+  <button mat-icon-button class="example-icon">
+    <mat-icon>share</mat-icon>
+  </button>
 
 </mat-toolbar>

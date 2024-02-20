@@ -18,12 +18,12 @@ export class ProductService {
 
     return this.httpclient.post<any>("http://localhost:9090/api/products/newProduct",
 
-        {
-          name:name,
-          price:price
-        }
+      {
+        name:name,
+        price:price
+      }
 
-      )
+    )
 
   }
 

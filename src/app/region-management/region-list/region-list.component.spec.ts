@@ -10,7 +10,7 @@ describe('RegionListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ RegionListComponent ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RegionListComponent);
     component = fixture.componentInstance;

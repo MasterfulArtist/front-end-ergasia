@@ -58,9 +58,9 @@ export class LoginComponent implements OnInit{
     this.password='';
     const dialogRef=this.matDialogue.open(
       RegisterComponent,
-    {
-      width:'400px',
-      height:'600px'
+      {
+        width:'400px',
+        height:'600px'
       }
 
     );
